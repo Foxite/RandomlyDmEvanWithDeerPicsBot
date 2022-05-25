@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Publish Docker
+      uses: elgohr/Publish-Docker-Github-Action@3.04
+      with:
+        name: randomly-ping-fisherman-bot
+        context: RandomlyPingFishermanBot
+        registry: ${{ secrets.PUSH_REPO }}
+        username: ${{ secrets.PUSH_USER }}
+        password: ${{ secrets.PUSH_PASSWD }}
+        default_branch: master
+        no_push: ${{ github.event_name == 'pull_request' }}
