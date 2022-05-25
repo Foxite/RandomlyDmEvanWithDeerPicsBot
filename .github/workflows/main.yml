@@ -13,8 +13,8 @@ jobs:
     - name: Publish Docker
       uses: elgohr/Publish-Docker-Github-Action@3.04
       with:
-        name: randomly-ping-fisherman-bot
-        context: RandomlyPingFishermanBot
+        name: randomly-dm-evan-with-deer-pics-bot
+        context: RandomlyDmEvanWithDeerPicsBot
         registry: ${{ secrets.PUSH_REPO }}
         username: ${{ secrets.PUSH_USER }}
         password: ${{ secrets.PUSH_PASSWD }}
