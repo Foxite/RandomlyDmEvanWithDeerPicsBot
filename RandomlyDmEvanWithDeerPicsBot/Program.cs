@@ -24,7 +24,7 @@ await discord.ConnectAsync();
 DiscordChannel? dmChannel = null;
 
 while (true) {
-	await Task.Delay(TimeSpan.FromHours(random.NextDouble() * 22 + 1));
+	await Task.Delay(TimeSpan.FromHours(random.NextDouble() * 22 + 3));
 
 	try {
 		using HttpResponseMessage image = await http.GetAsync($"https://api.tinyfox.dev/img?animal=bleat");
