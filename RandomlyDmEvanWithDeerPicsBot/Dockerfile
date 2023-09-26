@@ -14,4 +14,4 @@ RUN dotnet publish "RandomlyDmEvanWithDeerPicsBot.csproj" -c Release -o /app/pub
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "RandomlyDmEvanWithDeerPicsBot.dll"]
+CMD ["/app/RandomlyDmEvanWithDeerPicsBot"]
